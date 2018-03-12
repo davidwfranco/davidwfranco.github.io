@@ -1,7 +1,117 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="refresh" content="60">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" 
+          rel="stylesheet" 
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" 
+          crossorigin="anonymous">
+    <title>David's Test Site</title>
+</head>  
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
+  <header id="header">
+    <div id="menu">
+      <div id="branding"></div>
+      <div id="minimenu"><i class="fa fa-bars"></i></div>
+      <div class="nav">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#who">Who?</a></li>
+          <li><a href="#skills">What Can I Do?</a></li>
+          <li><a href="#other">Extras</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <div id="container">
+    <section id="home" class="section">
+        <header>
+            <h1>What?</h1>
+        </header>
+        <article>
+            <p>This is a personal website for me to learn how to do it and to, 
+            one day, be a collection of my skills and annotations</p>
+        </article>
+    </section>
+    <section id="who" class="section">
+        <header>
+            <h1>Who?</h1>
+            <h2>About Me</h2>
+        </header>
+        <article>
+            <p>I was born and raised in <i>Osasco</i>, a brazilian city in the state of <i>São Paulo</i>, middle class, blessed with 
+            loving parents and no worries in life, grown up to become a nerd, geek, book lover, games fan, tatoo enthusiast, developer 
+            wannabe and a lot of other stuff.</p>
+            <p><img src="images/content_abs_600x260.jpeg" /></p>
+        </article>
+    </section>
+    <section id="skills" class="section">
+        <header>
+            <h1>What I'm Capable Of?</h1>
+            <h2>A Short List of My Skills and Capabilities</h2>
+        </header>
+        <article>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+            Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
+            Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
+            <p>Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, 
+            arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis 
+            pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. 
+            Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, 
+            viverra quis, feugiat a,</p>
+        </article>
+    </section>
+    <section id="other" class="section">
+        <header>
+            <h1>Extras</h1>
+            <h2>Everything Else That Didn't Fit Into the Other Sections</h2>
+        </header>
+        <article>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+            Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
+            Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
+            <p><img src="images/content_abs_600x500.jpeg" /></p>
+            <p>Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, 
+            arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis 
+            pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. 
+            Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, 
+            viverra quis, feugiat a,</p>
+        </article>
+    </section>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
+  </script>
+  <script>
+        $(function(){
+            $('#minimenu').click(function(){
+                $('.nav').slideToggle();
+            });
+            
+            $('.window').bind('resize', function(){
+                console.log('resized');
+                if($('#minimenu').css('display') == 'none'){
+                    $('.nav').show();
+                } else {
+                    $('.nav').hide();
+                }
+            })
+            
+            $('.nav li a').click(function(event) {
+                var targetSection = $(this).attr('href');
+                var scrTo = $(targetSection).offset().top;
+                $('html, body').animate({
+                    scrollTop: scrTo
+                }, 1000);
+                if($('#minimenu').css('display') == 'block'){
+                    $('.nav').slideUp();
+                }
+                
+                event.preventDefault();
+            });
+        })
+  </script>
+</body> 
 </html>

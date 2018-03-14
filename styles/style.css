@@ -2,12 +2,29 @@
 
 #header {
   position: fixed;
-  background-color: white;
+  background-color: rgb(129, 125, 125);
   width: 100%;
   height: 80px;
   top: 0px;
   left: 0px;
   /*z-index: 2;*/
+}
+
+#branding {
+  width: 200px;
+  height: 50px;
+  float: left;
+  background: url("../images/header_abs_301x63.jpeg") no-repeat center center;
+  background-size: 200px;
+}
+
+#minimenu {
+    display: none;
+    float: right;
+    font-size: 40px;
+    margin-right: 20px;
+    margin-top: 5px;
+    cursor: pointer;
 }
 
 .nav {
@@ -40,21 +57,11 @@
   color: black;
 }
 
-#branding {
-  width: 200px;
-  height: 50px;
-  float: left;
-  background: url("../images/header_abs_301x63.jpeg") no-repeat center center;
-  background-size: 200px;
-}
 
-#minimenu {
-    display: none;
-    float: right;
-    font-size: 40px;
-    margin-right: 20px;
-    margin-top: 5px;
-    cursor: pointer;
+
+#sm-list {        
+  float: right;
+  vertical-align: middle;
 }
 
 /* nth-child is a pseudo element to chose a numbered element, 
@@ -68,13 +75,18 @@ the even/odd make the respective sections be affected*/
   padding-top: 100px;
   overflow: hidden;
   /*position: relative;*/
-    font-family: 'Muli', sans-serif;
-    /*background-color: rgb(178, 176, 237);*/
+  font-family: 'Muli', sans-serif;
+  /*background-color: rgb(178, 176, 237);*/
 }
 
 .section article {
   padding: 15px;
   background-color: rgba(255, 255, 255, 0.8);
+}
+
+#who {
+  background: url("../images/dont_panic1600x900.jpg") no-repeat;
+  background-size: cover;
 }
 
 #skills {
